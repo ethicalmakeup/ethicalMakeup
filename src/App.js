@@ -7,41 +7,46 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      userProduct: ''
+      userProduct: '',
+      userResults: []
       }
   }
   
   handleChange = (event) => {
+    event.preventDefault();
     this.setState({
       userProduct: event.target.value
-    })
-  } 
-
-
-
-  componentDidMount(){
-    axios({
-      method: 'get',
-      url: 'http://makeup-api.herokuapp.com/api/v1/products.json',
-      responseType: 'json',
-      params: {
-        format: 'json',
-        product_tags: 'vegan',
-        product_type: this.state.userProduct
-      }
-      
-
-    }).then(response => {
-
-      console.log(response);
-    })
-  }
-  
-  
+    },
+    () => {
+      axios({
+        method: 'get',
+        url: 'http://makeup-api.herokuapp.com/api/v1/products.json',
+        responseType: 'json',
+        params: {
+          format: 'json',
+          product_tags: 'vegan',
+          product_type: this.state.userProduct
+        }
+      }).then(response => {
+        response = response.data;
+        if (response.length === 0) {
+          alert('Sorry, no products were found in this category')
+        }
+        this.setState({
+          userResults: response
+        });
+      }).catch(function(error){
+        alert('Server error. Try again later')
+      })
+    
+    }
+    )    
+} 
   render() {
     return (
       <div className="App">
-        <Landing onChange={this.handleChange}/>
+        <Landing handleChange={this.handleChange}/>
+
       </div>
     );
   }
