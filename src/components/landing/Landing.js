@@ -2,7 +2,7 @@ import React from 'react';
 
 const Landing = (props) => {
     return (
-        <header>
+        <div>
             <h1>Ethical Makeup</h1>
             <p> I am looking for vegan
                 <select onChange={props.handleChange}>
@@ -19,7 +19,7 @@ const Landing = (props) => {
                     <option value="nail_polish">Nail Polish</option>
                 </select>
             </p>
-        </header>
+        </div>
     )
 }
 
