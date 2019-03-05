@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import Landing from './components/landing/Landing.js'
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      userProduct: ''
+      }
+  }
   
+  handleChange = (event) => {
+    this.setState({
+      userProduct: event.target.value
+    })
+  } 
+
+
+
   componentDidMount(){
     axios({
       method: 'get',
@@ -11,11 +26,13 @@ class App extends Component {
       responseType: 'json',
       params: {
         format: 'json',
-        product_tags: 'vegan'
+        product_tags: 'vegan',
+        product_type: this.state.userProduct
       }
       
 
     }).then(response => {
+
       console.log(response);
     })
   }
@@ -24,10 +41,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Ethical Makeup</h1>
-        <h2>Testing</h2>
-        <p>Luke's addition</p>
-        <p>This is a test - Talita</p>
+        <Landing onChange={this.handleChange}/>
       </div>
     );
   }
