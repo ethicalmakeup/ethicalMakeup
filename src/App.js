@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
-import Landing from './components/landing/Landing.js'
+import Landing from './components/landing/Landing.js';
+import Gallery from './components/gallery/Gallery.js';
 
 class App extends Component {
   constructor(){
@@ -38,15 +39,17 @@ class App extends Component {
       }).catch(function(error){
         alert('Server error. Try again later')
       })
-    
-    }
-    )    
-} 
+    })      
+  } 
   render() {
     return (
       <div className="App">
-        <Landing handleChange={this.handleChange}/>
-
+        <header>
+          <Landing handleChange={this.handleChange}/>
+        </header>
+        <main>
+          <Gallery userResults={this.state.userResults}/>
+        </main>
       </div>
     );
   }
