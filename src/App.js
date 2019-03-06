@@ -23,7 +23,7 @@ class App extends Component {
     },
     () => {
       axios({
-        method: 'get',
+        method: 'GET',
         url: 'http://makeup-api.herokuapp.com/api/v1/products.json',
         responseType: 'json',
         params: {
@@ -44,11 +44,17 @@ class App extends Component {
       })
     })      
   }
-  handleClick = (event) => {
+  handleClick = (chosenId) => {
+    console.log(chosenId);
+    const chosenProductObject = this.state.userResults.find(function(element) {
+      return (element.id === chosenId)
+    })
+    console.log(chosenProductObject)
       this.setState({
-      productDetails: event.target.value
+      chosenId: chosenId,
+      chosenProductObject: chosenProductObject
+
       })
-      console.log(this.state.productDetails);
   }
 
   render() {
