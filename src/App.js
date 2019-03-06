@@ -44,11 +44,11 @@ class App extends Component {
       })
     })      
   }
-  handleClick = () => {
+  handleClick = (event) => {
       this.setState({
-      
+      productDetails: event.target.value
       })
-      console.log(this);
+      console.log(this.state.productDetails);
   }
 
   render() {
@@ -59,7 +59,7 @@ class App extends Component {
         </header>
         <main>
           <Gallery userResults={this.state.userResults} handleClick={this.handleClick}/>
-          <Details />
+          <Details userResults={this.state.userResults}/>
         </main>
       </div>
     );
