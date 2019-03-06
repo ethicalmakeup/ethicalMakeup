@@ -1,29 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './Details.css';
 
 const Details = (props) => {
+
 	return (
         <section>
-            {props.userResults.map((result) => {
-                return (
-                    <div key={result.id}>
-			            <div>
-				            <img></img>
-			            </div>
-			            <div>
-                            <h2 />
-                            <p />
-                            <p />
-                            <p />
-                            <a href="" />
+            <div>
+                <img src={props.chosenProductObject.image_link} alt={props.chosenProductObject.name}/>
+            </div>
+            <div>
+                <h2>{props.chosenProductObject.name}</h2>
+                <p>{props.chosenProductObject.price}</p>
+                <p>{props.chosenProductObject.description}</p>
+                <p>{props.chosenProductObject.rating}</p>
+                <a href={props.chosenProductObject.product_link} target="_blank">Buy Now</a>
+            </div>
+            <div>
+                {props.chosenProductObject.product_colors.map(color => {
+                    return (
+                        <div>
+                            <p>{color.colour_name}</p>
+                            <span style={{background: color.hex_value}}></span>
                         </div>
-                    </div>
-                     )
-                })
-             }
+                    )
+                })}
+            </div>
         </section>
-        
-		
-	);
-};
+    )
+}
+  
 
 export default Details;
