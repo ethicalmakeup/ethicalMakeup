@@ -4,7 +4,7 @@ const Landing = (props) => {
     return (
         <div>
             <h1>Ethical Makeup</h1>
-            <p> I am looking for vegan
+            <p> I am looking for vegan 
                 <select onChange={props.handleChange}>
                     <option disabled selected value>Select your product</option>
                     <option value="blush">Blush</option>
@@ -17,7 +17,7 @@ const Landing = (props) => {
                     <option value="lipstick">Lipstick</option>
                     <option value="mascara">Mascara</option>
                     <option value="nail_polish">Nail Polish</option>
-                </select>
+                </select> 
             </p>
         </div>
     )

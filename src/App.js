@@ -3,13 +3,16 @@ import './App.css';
 import axios from 'axios';
 import Landing from './components/landing/Landing.js';
 import Gallery from './components/gallery/Gallery.js';
+import Details from './components/Details/Details.js';
+
 
 class App extends Component {
   constructor(){
     super();
     this.state = {
       userProduct: '',
-      userResults: []
+      userResults: [],
+      productDetails: []
       }
   }
   
@@ -40,7 +43,14 @@ class App extends Component {
         alert('Server error. Try again later')
       })
     })      
-  } 
+  }
+  handleClick = (event) => {
+      this.setState({
+      productDetails: event.target.value
+      })
+      console.log(this.state.productDetails);
+  }
+
   render() {
     return (
       <div className="App">
@@ -48,7 +58,8 @@ class App extends Component {
           <Landing handleChange={this.handleChange}/>
         </header>
         <main>
-          <Gallery userResults={this.state.userResults}/>
+          <Gallery userResults={this.state.userResults} handleClick={this.handleClick}/>
+          <Details userResults={this.state.userResults}/>
         </main>
       </div>
     );
