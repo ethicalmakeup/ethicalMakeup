@@ -12,6 +12,7 @@ const Details = (props) => {
                 <h2>{props.chosenProductObject.name}</h2>
                 <p>{props.chosenProductObject.price}</p>
                 <p>{props.chosenProductObject.description}</p>
+                <p>{props.chosenProductObject.rating}</p>
                 <a href={props.chosenProductObject.product_link} target="_blank">Buy Now</a>
             </div>
             <div>
