@@ -56,10 +56,6 @@ class App extends Component {
     })
     // console.log(this.state.chosenProductObject)
   }
-
-  handleOpenForm = () => {
-    console.log("clicked")
-  }
   
 
   render() {
@@ -71,7 +67,7 @@ class App extends Component {
         <main>
           <Gallery userResults={this.state.userResults} handleClick={this.handleClick}/>
           {this.state.chosenProductObject ? (<Details chosenProductObject={this.state.chosenProductObject}/>) : (null)}
-          { this.state.chosenProductObject ? (<Reviews handleOpenForm={this.handleOpenForm} />) : (null)}
+          { this.state.chosenProductObject ? (<Reviews />) : (null)}
         </main>
       </div>
     );
