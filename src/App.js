@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
-import Landing from './components/landing/Landing.js';
-import Gallery from './components/gallery/Gallery.js';
+import Landing from './components/Landing/Landing.js';
+import Gallery from './components/Gallery/Gallery.js';
 import Details from './components/Details/Details.js';
-
+import Reviews from './components/Reviews/Reviews.js';
+import firebase from './firebase.js';
 
 class App extends Component {
   constructor(){
@@ -19,7 +20,8 @@ class App extends Component {
   handleChange = (event) => {
     event.preventDefault();
     this.setState({
-      userProduct: event.target.value
+      userProduct: event.target.value,
+      chosenProductObject: ''
     },
     () => {
       axios({
@@ -54,6 +56,10 @@ class App extends Component {
     })
     // console.log(this.state.chosenProductObject)
   }
+
+  handleOpenForm = () => {
+    console.log("clicked")
+  }
   
 
   render() {
@@ -65,6 +71,7 @@ class App extends Component {
         <main>
           <Gallery userResults={this.state.userResults} handleClick={this.handleClick}/>
           {this.state.chosenProductObject ? (<Details chosenProductObject={this.state.chosenProductObject}/>) : (null)}
+          { this.state.chosenProductObject ? (<Reviews handleOpenForm={this.handleOpenForm} />) : (null)}
         </main>
       </div>
     );
