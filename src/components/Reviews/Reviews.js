@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Form from '../Form/Form.js';
 import firebase from '../../firebase.js';
 
 class Reviews extends Component {
@@ -10,6 +11,17 @@ class Reviews extends Component {
             openForm: false
         };
     }
+
+    handleOpenForm = () => {
+        this.setState({
+            openForm: true
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
     render() {
         return (
             <div>
@@ -21,10 +33,8 @@ class Reviews extends Component {
                         <p>Review: </p>
                     </div>
                 </div>
-                <button>Add a review</button>
-                <form>
-                    <input type="text">This is a form</input>
-                </form>) : (null)}
+                <button onClick={this.handleOpenForm}>Add a review</button>
+                { this.state.openForm === true ? (<Form handleSubmit={this.handleSubmit}/>) : (null)}
             </div>
         )
     }
