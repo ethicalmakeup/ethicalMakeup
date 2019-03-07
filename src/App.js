@@ -12,8 +12,8 @@ class App extends Component {
     this.state = {
       userProduct: '',
       userResults: [],
-      productDetails: []
-      }
+      chosenProductObject: ''
+    }
   }
   
   handleChange = (event) => {
@@ -44,18 +44,17 @@ class App extends Component {
       })
     })      
   }
-  handleClick = (chosenId) => {
-    console.log(chosenId);
-    const chosenProductObject = this.state.userResults.find(function(element) {
-      return (element.id === chosenId)
-    })
-    console.log(chosenProductObject)
-      this.setState({
-      chosenId: chosenId,
-      chosenProductObject: chosenProductObject
 
-      })
+  handleClick = (chosenId) => {
+    const chosenProductObject = this.state.userResults.find(function(element) {
+      return (element.id === chosenId);
+    })
+    this.setState({
+       chosenProductObject: chosenProductObject
+    })
+    // console.log(this.state.chosenProductObject)
   }
+  
 
   render() {
     return (
@@ -65,7 +64,7 @@ class App extends Component {
         </header>
         <main>
           <Gallery userResults={this.state.userResults} handleClick={this.handleClick}/>
-          <Details userResults={this.state.userResults}/>
+          {this.state.chosenProductObject ? (<Details chosenProductObject={this.state.chosenProductObject}/>) : (null)}
         </main>
       </div>
     );

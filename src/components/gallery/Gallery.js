@@ -6,7 +6,7 @@ const Gallery = (props) => {
             <ul>
                 {props.userResults.map(result => {
                     return (
-                        <li key={result.id} onClick={() =>{props.handleClick(result.id)}}>
+                        <li key={result.id} onClick={() => {props.handleClick(result.id)}}>
                             <img src={result.image_link} alt={result.name} />
                             <h2>{result.name}</h2>
                             {result.price > 0 ? (<p>${result.price}</p>) : (<p>Price not available</p>)}
@@ -19,3 +19,4 @@ const Gallery = (props) => {
 }
 
 export default Gallery;
+
