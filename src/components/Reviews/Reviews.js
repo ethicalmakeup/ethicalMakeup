@@ -20,6 +20,14 @@ class Reviews extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        const dbRef = firebase.database().ref();
+        console.log(dbRef);
+    }
+
+    handleFormChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
 
     render() {
@@ -34,7 +42,8 @@ class Reviews extends Component {
                     </div>
                 </div>
                 <button onClick={this.handleOpenForm}>Add a review</button>
-                { this.state.openForm === true ? (<Form handleSubmit={this.handleSubmit}/>) : (null)}
+                { this.state.openForm === true ? (<Form handleSubmit={this.handleSubmit}
+                                                        handleFormChange={this.handleFormChange}/>) : (null)}
             </div>
         )
     }
