@@ -21,8 +21,8 @@ class Reviews extends Component {
                         <p>Review: </p>
                     </div>
                 </div>
-                <button onClick={this.setState{(openForm: true)}}>Add a review</button>
-                { this.state.openForm ? (<form>
+                <button>Add a review</button>
+                <form>
                     <input type="text">This is a form</input>
                 </form>) : (null)}
             </div>
