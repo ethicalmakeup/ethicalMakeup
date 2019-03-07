@@ -67,7 +67,7 @@ class App extends Component {
         <main>
           <Gallery userResults={this.state.userResults} handleClick={this.handleClick}/>
           {this.state.chosenProductObject ? (<Details chosenProductObject={this.state.chosenProductObject}/>) : (null)}
-          { this.state.chosenProductObject ? (<Reviews />) : (null)}
+          {this.state.chosenProductObject ? (<Reviews chosenProductObject={this.state.chosenProductObject}/>) : (null)}
         </main>
       </div>
     );
