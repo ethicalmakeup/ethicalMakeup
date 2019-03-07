@@ -1,18 +1,19 @@
 import React from 'react';
 import './Details.css';
+// import Reviews from '../Review/Review.js';
 
 const Details = (props) => {
 
 	return (
-        <section>
+        <section key={props.chosenProductObject.id}>
             <div>
                 <img src={props.chosenProductObject.image_link} alt={props.chosenProductObject.name}/>
             </div>
             <div>
                 <h2>{props.chosenProductObject.name}</h2>
-                <p>{props.chosenProductObject.price}</p>
+                <p>${props.chosenProductObject.price}</p>
                 <p>{props.chosenProductObject.description}</p>
-                <p>{props.chosenProductObject.rating}</p>
+                {props.chosenProductObject.rating ? (<p>Rating: {props.chosenProductObject.rating}/5</p>):(<p>Rating: Not available</p>)}
                 <a href={props.chosenProductObject.product_link} target="_blank">Buy Now</a>
             </div>
             <div>
@@ -25,6 +26,7 @@ const Details = (props) => {
                     )
                 })}
             </div>
+            {/* <Reviews /> */}
         </section>
     )
 }
