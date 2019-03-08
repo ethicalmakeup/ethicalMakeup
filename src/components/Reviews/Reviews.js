@@ -6,7 +6,7 @@ class Reviews extends Component {
     constructor(props){
         super(props);
         this.state = {
-            reviews:[],
+            // reviews:[],
             openForm: false
         };
     }
@@ -46,38 +46,36 @@ class Reviews extends Component {
         })
     }
 
-    componentDidMount() {
-        this.setState ({
-            reviews:[]
-        })
-        const dbRef = firebase.database().ref();
-        dbRef.on('value', snapshot => {
-            let reviews = snapshot.val();
-            let newState = [];
-            for (let review in reviews) {
-                newState.push({
-                    id: reviews[review].id,
-                    name: reviews[review].name,
-                    buyAgain: reviews[review].buyAgain,
-                    reviewText: reviews[review].reviewText,
-                    date: reviews[review].date
-                });
-            }
+    // componentDidMount() {
+     
+    //     // const dbRef = firebase.database().ref();
+    //     // dbRef.on('value', snapshot => {
+    //     //     let reviews = snapshot.val();
+    //     //     let newState = [];
+    //     //     for (let review in reviews) {
+    //     //         newState.push({
+    //     //             id: reviews[review].id,
+    //     //             name: reviews[review].name,
+    //     //             buyAgain: reviews[review].buyAgain,
+    //     //             reviewText: reviews[review].reviewText,
+    //     //             date: reviews[review].date
+    //     //         });
+    //     //     }
 
-            // const filteredState = newState.filter(review => review.id === this.props.chosenProductObject.id);
+    //     //     this.setState({
+    //     //         reviews: newState.filter(review => review.id === this.props.chosenProductObject.id),
+    //     //     })
 
-            this.setState({
-                reviews: newState.filter(review => review.id === this.props.chosenProductObject.id)
-            })
-
-        })
-    }
+    //     // })
+    // }
 
     render() {
+        const reviews = this.props.reviews
+        console.log(reviews);
         return (
             <div>
                 <h2>Reviews</h2>
-                {this.state.reviews.map(review => {
+                {this.props.reviews.map(review => {
                     return (
                         <div>
                             <h3>Name: {review.name}</h3>

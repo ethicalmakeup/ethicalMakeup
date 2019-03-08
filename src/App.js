@@ -13,7 +13,8 @@ class App extends Component {
     this.state = {
       userProduct: '',
       userResults: [],
-      chosenProductObject: ''
+      chosenProductObject: '',
+      reviews: []
     }
   }
   
@@ -52,8 +53,31 @@ class App extends Component {
       return (element.id === chosenId);
     })
     this.setState({
-       chosenProductObject: chosenProductObject
+      chosenProductObject: chosenProductObject
     })
+
+    // this.setState({
+    //   reviews: ''
+    // })
+
+    const dbRef = firebase.database().ref();
+    dbRef.on('value', snapshot => {
+      let reviews = snapshot.val();
+      let newState = [];
+      for (let review in reviews) {
+        newState.push({
+          id: reviews[review].id,
+          name: reviews[review].name,
+          buyAgain: reviews[review].buyAgain,
+          reviewText: reviews[review].reviewText,
+          date: reviews[review].date
+        });
+      }
+      this.setState({
+        reviews: newState.filter(review => review.id === this.state.chosenProductObject.id),
+      })
+    })
+
     // console.log(this.state.chosenProductObject)
   }
   
@@ -67,7 +91,7 @@ class App extends Component {
         <main>
           <Gallery userResults={this.state.userResults} handleClick={this.handleClick}/>
           {this.state.chosenProductObject ? (<Details chosenProductObject={this.state.chosenProductObject}/>) : (null)}
-          {this.state.chosenProductObject ? (<Reviews chosenProductObject={this.state.chosenProductObject}/>) : (null)}
+          {this.state.chosenProductObject ? (<Reviews chosenProductObject={this.state.chosenProductObject} reviews={this.state.reviews}/>) : (null)}
         </main>
       </div>
     );
