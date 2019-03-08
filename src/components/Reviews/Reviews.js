@@ -8,7 +8,8 @@ class Reviews extends Component {
         super(props);
         this.state = {
             reviews:[],
-            openForm: false
+            openForm: false,
+            reviewText:''
         };
     }
 
@@ -25,7 +26,9 @@ class Reviews extends Component {
         let date = dt.getFullYear() + "/" + (dt.getMonth() + 1) + "/" + dt.getDate();
         console.log(date);
         this.setState({
-            date: date
+            date: date,
+            reviews:[],
+            reviewText:''
         }, () => {
             const dbRef = firebase.database().ref();
 
