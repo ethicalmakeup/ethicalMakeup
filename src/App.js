@@ -54,29 +54,25 @@ class App extends Component {
     })
     this.setState({
       chosenProductObject: chosenProductObject
+    }, () => {
+      const dbRef = firebase.database().ref();
+      dbRef.on('value', snapshot => {
+        let reviews = snapshot.val();
+        let newState = [];
+        for (let review in reviews) {
+          newState.push({
+            id: reviews[review].id,
+            name: reviews[review].name,
+            buyAgain: reviews[review].buyAgain,
+            reviewText: reviews[review].reviewText,
+            date: reviews[review].date
+          });
+        }
+        this.setState({
+          reviews: newState.filter(review => review.id === this.state.chosenProductObject.id),
+        })
     })
-
-    // this.setState({
-    //   reviews: ''
-    // })
-
-    const dbRef = firebase.database().ref();
-    dbRef.on('value', snapshot => {
-      let reviews = snapshot.val();
-      let newState = [];
-      for (let review in reviews) {
-        newState.push({
-          id: reviews[review].id,
-          name: reviews[review].name,
-          buyAgain: reviews[review].buyAgain,
-          reviewText: reviews[review].reviewText,
-          date: reviews[review].date
-        });
-      }
-      this.setState({
-        reviews: newState.filter(review => review.id === this.state.chosenProductObject.id),
-      })
-    })
+  })
 
     // console.log(this.state.chosenProductObject)
   }
