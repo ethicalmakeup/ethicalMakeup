@@ -36,7 +36,8 @@ class Reviews extends Component {
                 date: this.state.date
             }
             dbRef.push(review);
-        })  
+        })
+        e.target.reset(); 
     }
 
     handleFormChange = (e) => {
@@ -46,13 +47,16 @@ class Reviews extends Component {
     }
 
     componentDidMount() {
+        this.setState ({
+            reviews:[]
+        })
         const dbRef = firebase.database().ref();
         dbRef.on('value', snapshot => {
             let reviews = snapshot.val();
             let newState = [];
             for (let review in reviews) {
                 newState.push({
-                    id: review,
+                    id: reviews[review].id,
                     name: reviews[review].name,
                     buyAgain: reviews[review].buyAgain,
                     reviewText: reviews[review].reviewText,
@@ -63,8 +67,7 @@ class Reviews extends Component {
             // const filteredState = newState.filter(review => review.id === this.props.chosenProductObject.id);
 
             this.setState({
-                reviews: newState
-                // reviews: newState.filter(review => review.id === this.props.chosenProductObject.id)
+                reviews: newState.filter(review => review.id === this.props.chosenProductObject.id)
             })
 
         })
