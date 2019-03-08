@@ -1,4 +1,6 @@
 import React from 'react';
+import './Gallery.css';
+import Clearfix from 'react-clearfix';
 
 const Gallery = (props) => {
     return (
@@ -13,6 +15,7 @@ const Gallery = (props) => {
                         </li> 
                     )
                 })}
+                <Clearfix />
             </ul>
         </section>
     )

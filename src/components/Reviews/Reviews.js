@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from '../Form/Form.js';
 import firebase from '../../firebase.js';
+import './Reviews.css';
 
 class Reviews extends Component {
     constructor(props){
