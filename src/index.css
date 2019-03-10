@@ -8,18 +8,3 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 font-family: 'Hind Siliguri', sans-serif; */
 
 /* #4CD3AA, #CD9875, #CADFD4 */
-
-body {
-    background: #CADFD4;
-}
-
-h1 {
-    font-family: 'Cormorant', serif;
-    font-weight: 500;
-    font-size: 5em;
-    text-transform: uppercase;
-}
-
-p {
-    font-family: 'Hind Siliguri',sans-serif;
-}

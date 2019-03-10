@@ -1,23 +1,32 @@
+/* @import backgroundImage from '/src/assets/image.jpg'; */
 
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+    text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+    font-family: 'Cormorant', serif;
+    font-weight: 500;
+    font-size: 5em;
+    text-transform: uppercase;
 }
 
+p {
+    font-family: 'Hind Siliguri',sans-serif;
+}
+
+header {
+  background: url('assets/image.jpg') no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
 
 img {
   max-width: 150px;
   width: 100%;
   display: block;
+}
+
+main {
+  background: white;
 }

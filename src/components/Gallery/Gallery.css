@@ -1,6 +1,9 @@
 ul {
     list-style-type: none;
     text-align: left;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 li {
@@ -8,5 +11,5 @@ li {
     margin: 20px;
     float: left;
     cursor: pointer;
-
+    height: 300px;
 }
