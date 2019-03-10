@@ -47,41 +47,18 @@ class Reviews extends Component {
         })
     }
 
-    // componentDidMount() {
-     
-    //     // const dbRef = firebase.database().ref();
-    //     // dbRef.on('value', snapshot => {
-    //     //     let reviews = snapshot.val();
-    //     //     let newState = [];
-    //     //     for (let review in reviews) {
-    //     //         newState.push({
-    //     //             id: reviews[review].id,
-    //     //             name: reviews[review].name,
-    //     //             buyAgain: reviews[review].buyAgain,
-    //     //             reviewText: reviews[review].reviewText,
-    //     //             date: reviews[review].date
-    //     //         });
-    //     //     }
-
-    //     //     this.setState({
-    //     //         reviews: newState.filter(review => review.id === this.props.chosenProductObject.id),
-    //     //     })
-
-    //     // })
-    // }
-
     render() {
         const reviews = this.props.reviews
         console.log(reviews);
         return (
-            <div>
-                <h2>Reviews</h2>
+            <div className="reviews">
+                <h2>REVIEWS</h2>
                 {this.props.reviews.map(review => {
                     return (
-                        <div>
-                            <h3>Name: {review.name}</h3>
-                            <p>Date: {review.date} </p>
-                            <p>Would buy again? {review.buyAgain} </p>
+                        <div className="review">
+                            <h3>{review.name}</h3>
+                            <p className="date">{review.date} </p>
+                            <p>{review.buyAgain} </p>
                             <p>Review: {review.reviewText}</p>
                         </div>
                     )
