@@ -26,8 +26,11 @@ class App extends Component {
   };
   
   scrollTo = () => {
-    scroll.scrollTo(705);
-  };
+    scroll.scrollTo(705,
+    {
+      duration: 1500
+    }  
+    )};
 
 	handleChange = (event) => {
 		event.preventDefault();
