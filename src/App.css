@@ -1,7 +1,11 @@
-/* @import backgroundImage from '/src/assets/image.jpg'; */
-
 body {
     text-align: center;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 h1 {

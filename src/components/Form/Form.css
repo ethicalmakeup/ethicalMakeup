@@ -1,0 +1,164 @@
+@import '../../App.css';
+
+.formReview {
+    background-color: #e2ede7;
+    color:#261c16;
+    padding: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-family: 'Hindi Siliguri', sans-serif;
+    font-size: 1rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.formName,
+.buyAgain {
+    float: left;
+    width: calc(50% - 2%);
+    margin-bottom: 2%;
+}
+
+.formName {
+    text-align: right;
+}
+
+.formName input {
+    border: 0;
+    padding: 2% 1%;
+    box-shadow: -2px 2px #CD9875;
+}
+
+.buyAgain {
+    text-align: left;
+    margin-left: 2%;
+}
+
+.buyAgain p {
+    margin: 0;
+    margin-bottom: 2%;
+}
+
+.buyAgainAnswer {
+    float: left;
+    width: calc(50% - 24%);
+}
+
+.buyAgainAnswer input[type="radio"] {
+    margin-top: -1px;
+    vertical-align: middle;
+  }
+
+.buyAgainAnswer label {
+    margin-left: 12%;
+}
+
+.formCommentField,
+.formButton {
+    float: left;
+    width: 90%;
+}
+
+.formName label,
+.formCommentField label {
+    margin-right: 2%;
+}
+
+.formCommentField {
+    text-align: center;
+}
+
+.formCommentField textarea {
+    width: 50%;
+    border: 0;
+    padding: 2% 1%;
+    box-shadow: -2px 2px #CD9875;
+}
+
+.formButton {
+    text-align: right;
+    margin-top: 2%;
+}
+
+.formButton input {
+    background-color: #4CD3AA;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    border: 0;
+    padding: 2%;
+}
+
+.formButton input:hover {
+    opacity: 0.5;
+}
+
+/* MEDIA QUERY 630px */
+
+@media (max-width: 630px) {
+
+    .formName {
+        width: 80%;
+        text-align: left;
+        margin-left: 2%;
+    }
+
+    .buyAgain {
+        width: 65%;
+        text-align: center;
+    }
+
+    .formCommentField {
+        text-align: left;
+    }
+
+    .formCommentField textarea {
+        width: 80%;
+    }
+
+    .buyAgainAnswer {
+        width: 20%;
+        margin-left: 20%;
+    }
+
+    .formButton {
+        width: 87%;
+    }
+}
+
+/* MEDIA QUERY 427PX */
+
+@media (max-width: 427px) {
+    .formName,
+    .buyAgain {
+        width: 90%;
+    }
+
+    .formName input {
+        width: 75%;
+    }
+
+    .formName {
+        text-align: left;
+    }
+    
+    .buyAgain {
+        padding: 5% 0;
+    }
+
+    .buyAgainAnswer {
+        width: 30%;
+        margin-left: 10%;
+    }
+
+    .formCommentField textarea {
+        width: 74%;
+    }
+
+    .formButton {
+        width: 85%;
+        margin-top: 4%;
+    }
+}
+
+
