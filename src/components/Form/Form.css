@@ -3,7 +3,7 @@
 .formReview {
     background-color: #e2ede7;
     color:#261c16;
-    padding: 2%;
+    padding: 5%;
     margin-top: 2%;
     margin-bottom: 2%;
     font-family: 'Hindi Siliguri', sans-serif;
@@ -66,8 +66,8 @@
 
 .formCommentField {
     text-align: center;
-    margin-right: 50%;
 }
+
 .formCommentField textarea {
     width: 50%;
     border: 0;
@@ -91,6 +91,74 @@
 
 .formButton input:hover {
     opacity: 0.5;
+}
+
+/* MEDIA QUERY 630px */
+
+@media (max-width: 630px) {
+
+    .formName {
+        width: 80%;
+        text-align: left;
+        margin-left: 2%;
+    }
+
+    .buyAgain {
+        width: 65%;
+        text-align: center;
+    }
+
+    .formCommentField {
+        text-align: left;
+    }
+
+    .formCommentField textarea {
+        width: 80%;
+    }
+
+    .buyAgainAnswer {
+        width: 20%;
+        margin-left: 20%;
+    }
+
+    .formButton {
+        width: 87%;
+    }
+}
+
+/* MEDIA QUERY 427PX */
+
+@media (max-width: 427px) {
+    .formName,
+    .buyAgain {
+        width: 90%;
+    }
+
+    .formName input {
+        width: 75%;
+    }
+
+    .formName {
+        text-align: left;
+    }
+    
+    .buyAgain {
+        padding: 5% 0;
+    }
+
+    .buyAgainAnswer {
+        width: 30%;
+        margin-left: 10%;
+    }
+
+    .formCommentField textarea {
+        width: 74%;
+    }
+
+    .formButton {
+        width: 85%;
+        margin-top: 4%;
+    }
 }
 
 
