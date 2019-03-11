@@ -1,6 +1,6 @@
 span {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
     display: inline-block;
 }
 
@@ -20,37 +20,36 @@ span {
     text-align: left;
 }
 
+.description p {
+    margin: 10px 0;
+}
+
 .description-card {
-    margin-top: 10%;
+    padding-top: 5%;
+    border-top: 3px solid #4CD3AA; 
+    animation: fade-in ease 2s forwards;
 }
 
-.colors {
-    width: 50%;
+.descriptionText {
+    max-height: 250px;
+    overflow: scroll;
+}
+
+.colours {
+    width: 10%;
     float: left;
+    text-align: left;
+    margin: 10px 10px;
 }
 
-.colors p {
+.colours p {
     margin-bottom: 0;
 }
 
-.description a {
-        background-color: #4CD3AA; 
-        border: none;
-        border-radius: 10px;
-        color: white;
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        box-shadow: 2px 2px 5px 1px rgba(117,100,117,1);
-        transition: 0.2s linear;
+.description .button {
+    margin: 25px 0;
 }
 
-.description a:active {
-        box-shadow:  -1px -1px 0px -3px;
+.colour {
+    border-radius: 0.8rem 0.7rem 0.6rem;
 }
-
-.description a:hover {
-    background-color: #3FBC96;
-}
-

@@ -22,12 +22,16 @@ class App extends Component {
 	}
 
 	scrollToBottom = () => {
-		scroll.scrollToBottom();
-  };
+		scroll.scrollToBottom(
+    {
+      duration: 2000
+    }
+  )};
   
   scrollTo = () => {
     scroll.scrollTo(705,
     {
+      delay: 800,
       duration: 1500
     }  
     )};

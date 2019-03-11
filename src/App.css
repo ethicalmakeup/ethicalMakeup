@@ -1,36 +1,81 @@
+html {
+  font-size: 125%;
+}
+
 body {
     text-align: center;
+    font-size: 1rem;
+    font-family: 'Hind Siliguri', sans-serif;
 }
 
 .wrapper {
-  width: 80%;
-  max-width: 1024px;
+  width: 90%;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
+h1, h2, h3 {
+  font-family: 'Cormorant', serif;  
+}
+
 h1 {
-    font-family: 'Cormorant', serif;
-    font-weight: 500;
-    font-size: 5em;
-    text-transform: uppercase;
+  font-weight: 500;
+  font-size: 5rem;
+  text-transform: uppercase;
 }
 
 p {
-    font-family: 'Hind Siliguri',sans-serif;
+  font-family: 'Hind Siliguri',sans-serif;
 }
 
 header {
   background: url('assets/image.jpg') no-repeat;
   background-size: cover;
+  background-position: center top;
   height: 100vh;
 }
 
 img {
-  max-width: 150px;
-  width: 100%;
+  max-width: 100%;
   display: block;
+  object-fit: cover;
 }
 
 main {
   background: white;
 }
+
+.button {
+  background-color: #4CD3AA;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 5px 30px;
+  text-decoration: none;
+  box-shadow: 2px 2px 5px 1px rgba(117,100,117,1);
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+  clear: both;
+  display: inline-block;
+}
+
+.button:active {
+        box-shadow:  -1px -1px 0px -3px;
+}
+.button:hover {
+    background-color: #3FBC96;
+}
+
+/* ANIMATION */
+
+@keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(405px);
+    }
+    to {
+      opacity: 2;
+      transform: translateY(0);
+    }
+  }
+

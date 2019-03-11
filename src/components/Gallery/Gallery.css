@@ -1,35 +1,23 @@
-@keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(405px);
-    }
-    to {
-      opacity: 2;
-      transform: translateY(0);
-    }
-  }
-
 ul {
 	list-style-type: none;
-	text-align: left;
 	overflow: hidden;
 	margin: 0 auto;
-    max-width: 1100px;
+    padding: 0;
+    text-align: center;
 }
 
 li {
-	width: calc(100% / 3 - 40px);
-	margin: 20px 10px;
+	width: calc(100% / 3 - 20px);
+	margin: 40px 10px 20px 10px;
 	float: left;
 	word-wrap: break-word;
 	cursor: pointer;
-	height: 300px;
 	background: #ffffff;
 	transition: all 0.7s ease;
-    height: 320px;
     opacity: 0;
     animation: fade-in ease 3s forwards;
-    
+    min-height: 350px;
+    padding: 5px;
 }
 
 li:hover {
@@ -38,13 +26,14 @@ li:hover {
 }
 
 .title {
-	font-family: 'Cormorant', serif;
+    font-family: 'Cormorant', serif;
+    font-size: 1rem;
 }
 
-li img {
-    width: 60%;
-    /* height: 60%; */
-	margin: 5px auto;
+.imageContainer img {
+    margin: 5px auto;
+    object-fit: cover;
+    height: 200px;
 }
 
 .title,
@@ -57,9 +46,14 @@ li img {
     font-style: italic;
 }
 
+.price,
+.none {
+    font-size: .8rem;
+}
+
 @media only screen and (max-width: 600px) {
 	li {
-		width: calc(100% / 2 - 40px);
+		width: calc(100% / 2 - 20px);
 	}
 }
 

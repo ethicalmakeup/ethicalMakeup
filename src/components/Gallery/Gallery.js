@@ -11,7 +11,7 @@ const round = (price) => {
 
 const Gallery = (props) => {
 	return (
-		<section className="gallery" id="gallery">
+		<section className="gallery wrapper" id="gallery">
 			<ul>
 				{props.userResults.map((result) => {
 					return (
@@ -27,18 +27,26 @@ const Gallery = (props) => {
 								}}
 							>
 								{result.id === 1043 ? (
-									<img src={image1} alt={result.name} />
+									<div className="imageContainer">
+										<img src={image1} alt={result.name} />
+									</div>
 								) : result.id === 1042 ? (
-									<img src={image2} alt={result.name} />
+									<div className="imageContainer">
+										<img src={image2} alt={result.name} />
+									</div>
 								) : (
-									<img src={result.image_link} alt={result.name} />
+									<div className="imageContainer">
+										<img src={result.image_link} alt={result.name} />
+									</div>
 								)}
-								<h2 className="title">{result.name}</h2>
-								{result.price > 0 ? (
-									<p className="price">${result.price}</p>
-								) : (
-									<p className="none">Price is unavailable</p>
-								)}
+								<div>
+									<h2 className="title">{result.name}</h2>
+									{result.price > 0 ? (
+										<p className="price">${result.price}</p>
+									) : (
+										<p className="none">Price is unavailable</p>
+									)}
+								</div>
 								{/* {result.price.split('.')[1].length ? (<p>${result.price.toFixed(2)}</p>) : (null)} */}
 								{/* trying to make all the prices with only 1 decimal place display 2 decimal places */}
 							</Link>

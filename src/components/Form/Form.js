@@ -27,7 +27,7 @@ const Form = (props) => {
                         onChange={props.handleFormChange}></textarea>
             </div>
             <div className="formButton">
-                <input type="submit" value="Submit Review"></input>
+                <input type="submit" value="Submit Review" className="button"></input>
             </div>
             <Clearfix />
         </form>

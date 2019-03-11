@@ -60,12 +60,14 @@ class Reviews extends Component {
                         </div>
                     )
                 })}
-                <button onClick={() => {
+                <button className="button" onClick={() => {
                     this.handleOpenForm();
                     this.props.scroll() }} 
                 > Add a review</button>
+                <section className="form">
                 { this.state.openForm === true ? (<Form handleSubmit={this.handleSubmit}
                                                         handleFormChange={this.handleFormChange}/>) : (null)}
+                </section>
             </div>
         )
     }
