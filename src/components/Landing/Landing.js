@@ -1,13 +1,18 @@
 import React from 'react';
 import './Landing.css';
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 
 const Landing = (props) => {
     return (
         <div>
             <h1>Ethical Makeup</h1>
-            <p> I am looking for vegan 
-                <select onChange={props.handleChange}>
+            <p> I am looking for vegan
+                <select onChange= {(event) =>{
+                    props.handleChange(event);
+                    props.scrollTo(event)
+                    }}
+                    >
                     <option disabled selected value>Select your product</option>
                     <option value="blush">Blush</option>
                     <option value="bronzer">Bronzer</option>

@@ -1,16 +1,20 @@
 import React from 'react';
 import './Details.css';
 import Clearfix from 'react-clearfix';
+import image1 from '../Gallery/image1.jpg';
+import image2 from '../Gallery/image2.jpg';
 // import Reviews from '../Review/Review.js';
 
 const Details = (props) => {
-
 	return (
-        <section key={props.chosenProductObject.id}>
-            <div className='description-card'>
-                <div className='image'>
-                    <img src={props.chosenProductObject.image_link} alt={props.chosenProductObject.name}/>
-                </div>
+        <div className='description-card' key={props.chosenProductObject.id}>
+            <div className='image'>
+                {props.chosenProductObject.id === 1043 ? 
+                    ( <img src={image1} alt={props.chosenProductObject.name} />)
+                        : props.chosenProductObject.id === 1042 ? 
+                        ( <img src={image2} alt={props.chosenProductObject.name} /> ) 
+                        :( <img src={props.chosenProductObject.image_link} alt={props.chosenProductObject.name}/>)}
+            </div>
             <div className='description'>
                 <div>
                     <h2>{props.chosenProductObject.name}</h2>
@@ -32,9 +36,6 @@ const Details = (props) => {
             </div>
             <Clearfix />
         </div>
-                
-            {/* <Reviews /> */}
-        </section>
     )
 }
   
