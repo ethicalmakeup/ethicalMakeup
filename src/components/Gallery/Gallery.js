@@ -21,10 +21,10 @@ const Gallery = (props) => {
 								spy={true}
 								smooth={true}
 								offset={-30}
-                                duration={800}
-                                onClick={() => {
-                                    props.handleClick(result.id);
-                                }}
+								duration={800}
+								onClick={() => {
+									props.handleClick(result.id);
+								}}
 							>
 								{result.id === 1043 ? (
 									<img src={image1} alt={result.name} />
