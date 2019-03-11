@@ -17,7 +17,7 @@ const Details = (props) => {
                     <p>${props.chosenProductObject.price}</p>
                     <p>{props.chosenProductObject.description}</p>
                     {props.chosenProductObject.rating ? (<p>Rating:     {props.chosenProductObject.rating}/5</p>):(<p>Rating: Not available</p>)}
-                    <a href={props.chosenProductObject.product_link} target="_blank">Buy Now</a>
+                        <a href={props.chosenProductObject.product_link} target="_blank" rel="noopener noreferrer">Buy Now</a>
                 </div>
                 <div>
                     {props.chosenProductObject.product_colors.map(color => {
