@@ -25,9 +25,7 @@ class Reviews extends Component {
         let date = dt.getFullYear() + "/" + (dt.getMonth() + 1) + "/" + dt.getDate();
         // console.log(date);
         this.setState({
-            date: date,
-            reviews:[],
-            reviewText:''
+            date: date
         }, () => {
             const dbRef = firebase.database().ref();
 
