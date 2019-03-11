@@ -1,11 +1,9 @@
 @import '../../App.css';
 
 .formReview {
-    background-color: #e2ede7;
     color:#261c16;
     padding: 5%;
     margin-top: 2%;
-    margin-bottom: 2%;
     font-family: 'Hindi Siliguri', sans-serif;
     font-size: 1rem;
     overflow: hidden;
@@ -74,24 +72,12 @@
     border: 0;
     padding: 2% 1%;
     box-shadow: -2px 2px #CD9875;
+    resize: none;
 }
 
 .formButton {
-    text-align: right;
+    text-align: center;
     margin-top: 2%;
-}
-
-.formButton input {
-    background-color: #4CD3AA;
-    color: white;
-    border-radius: 10px;
-    font-weight: bold;
-    border: 0;
-    padding: 2%;
-}
-
-.formButton input:hover {
-    opacity: 0.5;
 }
 
 /* MEDIA QUERY 630px */
