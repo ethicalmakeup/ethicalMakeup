@@ -3,3 +3,54 @@ span {
     width: 20px;
     display: inline-block;
 }
+
+.image {
+    width: 30%;
+    float: left;
+}
+
+.image img {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.description {
+    width: 70%;
+    float: left;
+    text-align: left;
+}
+
+.description-card {
+    margin-top: 10%;
+}
+
+.colors {
+    width: 50%;
+    float: left;
+}
+
+.colors p {
+    margin-bottom: 0;
+}
+
+.description a {
+        background-color: #4CD3AA; 
+        border: none;
+        border-radius: 10px;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 2px 2px 5px 1px rgba(117,100,117,1);
+        transition: 0.2s linear;
+}
+
+.description a:active {
+        box-shadow:  -1px -1px 0px -3px;
+}
+
+.description a:hover {
+    background-color: #3FBC96;
+}
+

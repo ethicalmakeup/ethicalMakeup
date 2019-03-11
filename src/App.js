@@ -5,6 +5,7 @@ import Landing from './components/Landing/Landing.js';
 import Gallery from './components/Gallery/Gallery.js';
 import Details from './components/Details/Details.js';
 import Reviews from './components/Reviews/Reviews.js';
+import Loader from './components/Loader/Loader.js'
 import firebase from './firebase.js';
 
 class App extends Component {
@@ -14,7 +15,8 @@ class App extends Component {
       userProduct: '',
       userResults: [],
       chosenProductObject: '',
-      reviews: []
+      reviews: [],
+      isLoading: false
     }
   }
   
@@ -22,7 +24,8 @@ class App extends Component {
     event.preventDefault();
     this.setState({
       userProduct: event.target.value,
-      chosenProductObject: ''
+      chosenProductObject: '',
+      isLoading: true
     },
     () => {
       axios({
@@ -40,7 +43,8 @@ class App extends Component {
           alert('Sorry, no products were found in this category')
         }
         this.setState({
-          userResults: response
+          userResults: response,
+          isLoading: false
         });
       }).catch(function(error){
         alert('Server error. Try again later')
@@ -83,6 +87,7 @@ class App extends Component {
       <div className="App">
         <header>
           <Landing handleChange={this.handleChange}/>
+          {this.state.isLoading ? <Loader /> : (null)}
         </header>
         <main>
           <Gallery userResults={this.state.userResults} handleClick={this.handleClick}/>

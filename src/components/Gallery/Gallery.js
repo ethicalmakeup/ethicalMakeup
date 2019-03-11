@@ -19,8 +19,11 @@ const Gallery = (props) => {
                             {(result.id === 1043) ? (<img src={image1} alt={result.name} />)
                             : (result.id === 1042) ? <img src={image2} alt={result.name} />
                             : <img src={result.image_link} alt={result.name}/>}
+                            
                             <h2 className="title">{result.name}</h2>
                             {result.price > 0 ? (<p className="price">${result.price}</p>) : (<p className="none">Price is unavailable</p>)}
+                            {/* {result.price.split('.')[1].length ? (<p>${result.price.toFixed(2)}</p>) : (null)} */}
+                            {/* trying to make all the prices with only 1 decimal place display 2 decimal places */}
                         </li> 
                     )
                 })}

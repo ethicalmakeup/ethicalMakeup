@@ -1,31 +1,38 @@
 import React from 'react';
 import './Details.css';
+import Clearfix from 'react-clearfix';
 // import Reviews from '../Review/Review.js';
 
 const Details = (props) => {
 
 	return (
         <section key={props.chosenProductObject.id}>
-            <div>
-                <img src={props.chosenProductObject.image_link} alt={props.chosenProductObject.name}/>
+            <div className='description-card'>
+                <div className='image'>
+                    <img src={props.chosenProductObject.image_link} alt={props.chosenProductObject.name}/>
+                </div>
+            <div className='description'>
+                <div>
+                    <h2>{props.chosenProductObject.name}</h2>
+                    <p>${props.chosenProductObject.price}</p>
+                    <p>{props.chosenProductObject.description}</p>
+                    {props.chosenProductObject.rating ? (<p>Rating:     {props.chosenProductObject.rating}/5</p>):(<p>Rating: Not available</p>)}
+                    <a href={props.chosenProductObject.product_link} target="_blank">Buy Now</a>
+                </div>
+                <div>
+                    {props.chosenProductObject.product_colors.map(color => {
+                        return (
+                            <div className='colors'>
+                                <p className='colour-name'>{color.colour_name}</p>
+                                <span className='colour' style={{background: color.hex_value}}></span>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
-            <div>
-                <h2>{props.chosenProductObject.name}</h2>
-                <p>${props.chosenProductObject.price}</p>
-                <p>{props.chosenProductObject.description}</p>
-                {props.chosenProductObject.rating ? (<p>Rating: {props.chosenProductObject.rating}/5</p>):(<p>Rating: Not available</p>)}
-                <a href={props.chosenProductObject.product_link} target="_blank">Buy Now</a>
-            </div>
-            <div>
-                {props.chosenProductObject.product_colors.map(color => {
-                    return (
-                        <div>
-                            <p>{color.colour_name}</p>
-                            <span style={{background: color.hex_value}}></span>
-                        </div>
-                    )
-                })}
-            </div>
+            <Clearfix />
+        </div>
+                
             {/* <Reviews /> */}
         </section>
     )
