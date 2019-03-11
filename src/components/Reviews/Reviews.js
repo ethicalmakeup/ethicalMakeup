@@ -23,7 +23,7 @@ class Reviews extends Component {
 
         let dt = new Date();
         let date = dt.getFullYear() + "/" + (dt.getMonth() + 1) + "/" + dt.getDate();
-        console.log(date);
+        // console.log(date);
         this.setState({
             date: date
         }, () => {
@@ -49,7 +49,7 @@ class Reviews extends Component {
 
     render() {
         const reviews = this.props.reviews
-        console.log(reviews);
+        // console.log(reviews);
         return (
             <div className="reviews">
                 <h2>REVIEWS</h2>
