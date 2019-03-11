@@ -1,22 +1,35 @@
 import React from 'react';
+import './Form.css';
+import Clearfix from 'react-clearfix';
 
 const Form = (props) => {
     return (
-        <form action="submit" onSubmit={props.handleSubmit}>
-            <label for="reviewName">Name:</label>
-            <input required type="text" id="reviewName" name="reviewName" placeholder="Your name" onChange={props.handleFormChange}></input>
-            <div>
-                <p>Would you buy this product again?</p>
-                <input required type="radio" id="yes" name="buyAgain" value="yes" onChange={props.handleFormChange}></input>
-                <label for="yes">Yes</label>
-                <input required type="radio" id="no" name="buyAgain" value="no" onChange={props.handleFormChange}></input>
-                <label for="no">No</label>
+        <form className="formReview wrapper"  action="submit" onSubmit={props.handleSubmit}>
+            <div className="formName">
+                <label for="reviewName">Name:</label>
+                <input required type="text" id="reviewName" name="reviewName" placeholder="Your name" onChange={props.handleFormChange}></input>
             </div>
-            
-            <label for="reviewText">Review:</label>
-            <textarea required id="reviewText" placeholder="Your review..." cols="20" rows="5" name="reviewText" 
-                      onChange={props.handleFormChange}></textarea>
-            <input type="submit" value="Submit Review"></input>
+            <div className="buyAgain">
+                <p>Would you buy this product again?</p>
+
+                <div className="buyAgainAnswer">
+                    <input required type="radio" id="yes" name="buyAgain" value="Would buy again" onChange={props.handleFormChange}></input>
+                    <label for="yes">Yes</label>
+                </div>
+                <div className="buyAgainAnswer">
+                    <input required type="radio" id="no" name="buyAgain" value="Would not buy again" onChange={props.handleFormChange}></input>
+                    <label for="no">No</label>
+                </div>
+            </div>
+            <div className="formCommentField">
+                <label for="reviewText">Review:</label>
+                <textarea required id="reviewText" placeholder="Your review..." cols="20" rows="5" name="reviewText" 
+                        onChange={props.handleFormChange}></textarea>
+            </div>
+            <div className="formButton">
+                <input type="submit" value="Submit Review"></input>
+            </div>
+            <Clearfix />
         </form>
     )
 }
