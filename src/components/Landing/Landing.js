@@ -1,7 +1,5 @@
 import React from 'react';
 import './Landing.css';
-import { Link, animateScroll as scroll } from 'react-scroll';
-
 
 const Landing = (props) => {
     return (
