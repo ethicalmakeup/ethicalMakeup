@@ -1,3 +1,14 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(405px);
+  }
+  to {
+    opacity: 2;
+    transform: translateY(0);
+  }
+}
+
 body {
     text-align: center;
 }

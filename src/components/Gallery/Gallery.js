@@ -21,7 +21,7 @@ const Gallery = (props) => {
 								spy={true}
 								smooth={true}
 								offset={-30}
-								duration={800}
+								duration={1300}
 								onClick={() => {
 									props.handleClick(result.id);
 								}}

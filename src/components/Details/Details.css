@@ -22,6 +22,7 @@ span {
 
 .description-card {
     margin-top: 10%;
+    animation: fade-in ease 2s forwards;
 }
 
 .colors {
@@ -52,5 +53,9 @@ span {
 
 .description a:hover {
     background-color: #3FBC96;
+}
+
+.colour {
+    border-radius: 30% 40% 50% 60%;
 }
 
