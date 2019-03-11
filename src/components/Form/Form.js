@@ -13,11 +13,11 @@ const Form = (props) => {
                 <p>Would you buy this product again?</p>
 
                 <div className="buyAgainAnswer">
-                    <input required type="radio" id="yes" name="buyAgain" value="yes" onChange={props.handleFormChange}></input>
+                    <input required type="radio" id="yes" name="buyAgain" value="Would buy again" onChange={props.handleFormChange}></input>
                     <label for="yes">Yes</label>
                 </div>
                 <div className="buyAgainAnswer">
-                    <input required type="radio" id="no" name="buyAgain" value="no" onChange={props.handleFormChange}></input>
+                    <input required type="radio" id="no" name="buyAgain" value="Would not buy again" onChange={props.handleFormChange}></input>
                     <label for="no">No</label>
                 </div>
             </div>

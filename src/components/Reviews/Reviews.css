@@ -1,0 +1,49 @@
+.reviews button {
+        background-color: #4CD3AA; 
+        border: none;
+        border-radius: 10px;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        box-shadow: 2px 2px 5px 1px rgba(117,100,117,1);
+        transition: 0.2s linear;
+        clear: both;
+        margin: 25px auto;
+}
+.reviews button:active {
+        box-shadow:  -1px -1px 0px -3px;
+}
+.reviews button:hover {
+    background-color: #3FBC96;
+}
+
+.review {
+    overflow: hidden;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+    /* NEED TO CLEARFIX */
+}
+
+.review h3, p {
+    margin: 0;
+}
+
+.review p {
+    float: left;
+    clear: both;
+}
+
+.review h3 {
+    float: left;
+}
+
+.review .date {
+    float: right;
+    color: grey;
+    clear: none;
+}
