@@ -7,7 +7,6 @@ class Reviews extends Component {
     constructor(props){
         super(props);
         this.state = {
-            // reviews:[],
             openForm: false
         };
     }
@@ -48,8 +47,6 @@ class Reviews extends Component {
     }
 
     render() {
-        const reviews = this.props.reviews
-        // console.log(reviews);
         return (
             <div className="reviews">
                 <h2>REVIEWS</h2>
@@ -63,7 +60,10 @@ class Reviews extends Component {
                         </div>
                     )
                 })}
-                <button onClick={this.handleOpenForm}>Add a review</button>
+                <button onClick={() => {
+                    this.handleOpenForm();
+                    this.props.scroll() }} 
+                > Add a review</button>
                 { this.state.openForm === true ? (<Form handleSubmit={this.handleSubmit}
                                                         handleFormChange={this.handleFormChange}/>) : (null)}
             </div>
