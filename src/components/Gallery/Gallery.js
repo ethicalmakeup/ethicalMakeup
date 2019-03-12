@@ -24,9 +24,10 @@ const Gallery = (props) => {
 								smooth={true}
 								offset={-30}
 								duration={1300}
-								onClick={() => {
-									props.handleClick(result.id);
-								}}
+								onClick={(event) => {
+									props.handleClick(result.id)
+									props.enter(event)
+									}}
 							>
 								{result.id === 1043 ? (
 									<div className="imageContainer">

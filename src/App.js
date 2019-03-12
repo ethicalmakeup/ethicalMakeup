@@ -24,7 +24,7 @@ class App extends Component {
 	scrollToBottom = () => {
 		scroll.scrollToBottom(
     {
-      duration: 500
+      duration: 2000
     }
   )};
   
@@ -34,7 +34,7 @@ class App extends Component {
       delay: 800,
       duration: 1500
     }  
-    )};
+	)};
 
 	handleChange = (event) => {
 		event.preventDefault();
@@ -106,7 +106,15 @@ class App extends Component {
   
   round = (price) => {
     	return Number.parseFloat(price).toFixed(2);
-    };
+	};
+
+	enter = (event) => {
+		if (event.which == 13 || event.keyCode == 13) {
+			//code to execute here
+			return false;
+		}
+		return true;
+	};
 
 	render() {
 		return (
@@ -116,7 +124,7 @@ class App extends Component {
 					{this.state.isLoading ? <Loader /> : null}
 				</header>
 				<main>
-					<Gallery userResults={this.state.userResults} handleClick={this.handleClick} round={this.round}/>
+					<Gallery userResults={this.state.userResults} handleClick={this.handleClick} round={this.round} enter={this.enter}/>
 					<section id="details">
 						{this.state.chosenProductObject ? (
 							<Details round={this.round} chosenProductObject={this.state.chosenProductObject} />
