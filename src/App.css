@@ -1,17 +1,5 @@
-<<<<<<< HEAD
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(405px);
-  }
-  to {
-    opacity: 2;
-    transform: translateY(0);
-  }
-=======
 html {
   font-size: 125%;
->>>>>>> master
 }
 
 body {
