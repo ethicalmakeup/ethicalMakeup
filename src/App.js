@@ -24,7 +24,7 @@ class App extends Component {
 	scrollToBottom = () => {
 		scroll.scrollToBottom(
     {
-      duration: 2000
+      duration: 500
     }
   )};
   
@@ -102,7 +102,11 @@ class App extends Component {
 		);
 
 		// console.log(this.state.chosenProductObject)
-	};
+  };
+  
+  round = (price) => {
+    	return Number.parseFloat(price).toFixed(2);
+    };
 
 	render() {
 		return (
@@ -112,10 +116,10 @@ class App extends Component {
 					{this.state.isLoading ? <Loader /> : null}
 				</header>
 				<main>
-					<Gallery userResults={this.state.userResults} handleClick={this.handleClick} />
+					<Gallery userResults={this.state.userResults} handleClick={this.handleClick} round={this.round}/>
 					<section id="details">
 						{this.state.chosenProductObject ? (
-							<Details chosenProductObject={this.state.chosenProductObject} />
+							<Details round={this.round} chosenProductObject={this.state.chosenProductObject} />
 						) : null}
 					</section>
 					{this.state.chosenProductObject ? (

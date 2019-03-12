@@ -5,17 +5,18 @@ span {
 }
 
 .image {
-    width: 30%;
+    width: calc(20% - 30px);
     float: left;
+    margin: 30px 30px 10px 0;
 }
 
 .image img {
-    max-width: 250px;
+    width: 200px;
     margin: 0 auto;
 }
 
 .description {
-    width: 70%;
+    width: 80%;
     float: left;
     text-align: left;
 }
@@ -24,10 +25,15 @@ span {
     margin: 10px 0;
 }
 
+.description h2 {
+    text-align: center;
+}
+
 .description-card {
     padding-top: 5%;
     border-top: 3px solid #4CD3AA; 
     animation: fade-in ease 2s forwards;
+    margin-top: 10px;
 }
 
 .descriptionText {
@@ -50,6 +56,36 @@ span {
     margin: 25px 0;
 }
 
+.noRating span {
+    font-style: italic;
+    width: 180px;
+    font-size: 0.9rem;
+}
+
 .colour {
     border-radius: 0.8rem 0.7rem 0.6rem;
+}
+
+@media only screen and (max-width: 620px) {
+
+    .image {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .description {
+        text-align-last: center;
+        width: 100%;
+    }
+
+    .description h2 {
+        margin-bottom: 5px;
+    }
+
+    .descriptionText {
+       font-size: 0.8rem;
+       text-align-last: left;
+    }
+
 }
