@@ -1,4 +1,8 @@
 
+.form {
+    box-shadow: 0 0 10px #999;
+}
+
 .formReview {
     color:#261c16;
     padding: 5%;
@@ -88,41 +92,5 @@
     }
 
 } 
-/* 
- MEDIA QUERY 427PX */
-/* 
-@media (max-width: 427px) {
-    .formName,
-    .buyAgain {
-        width: 90%;
-    }
-
-    .formName input {
-        width: 75%;
-    }
-
-    .formName {
-        text-align: left;
-    }
-    
-    .buyAgain {
-        padding: 5% 0;
-    }
-
-    .buyAgainAnswer {
-        width: 30%;
-        margin-left: 10%;
-    }
-
-    .formCommentField textarea {
-        width: 74%;
-    }
-
-    .formButton {
-        width: 85%;
-        margin-top: 4%;
-    }
-} */
-
 
 

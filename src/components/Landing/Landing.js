@@ -5,13 +5,13 @@ const Landing = (props) => {
     return (
         <div>
             <h1>Ethical Makeup</h1>
-            <p> I am looking for vegan
+            <p className="landing"> I am looking for vegan
                 <select onChange= {(event) =>{
                     props.handleChange(event);
                     props.scrollTo(event)
                     }}
                     >
-                    <option disabled selected value>Select your product</option>
+                    <option disabled selected value>Select product</option>
                     <option value="blush">Blush</option>
                     <option value="bronzer">Bronzer</option>
                     <option value="eyebrow">Eyebrow</option>

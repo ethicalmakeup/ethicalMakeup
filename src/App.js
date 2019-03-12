@@ -7,7 +7,7 @@ import Details from './components/Details/Details.js';
 import Reviews from './components/Reviews/Reviews.js';
 import Loader from './components/Loader/Loader.js';
 import firebase from './firebase.js';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { animateScroll as scroll } from 'react-scroll';
 
 class App extends Component {
 	constructor() {
@@ -104,17 +104,18 @@ class App extends Component {
 		// console.log(this.state.chosenProductObject)
   };
   
-  round = (price) => {
+  	round = (price) => {
     	return Number.parseFloat(price).toFixed(2);
 	};
 
-	enter = (event) => {
-		if (event.which == 13 || event.keyCode == 13) {
-			//code to execute here
-			return false;
-		}
-		return true;
-	};
+	handleKeyPress = (event, id) => {
+		console.log(event)
+		console.log(id)
+		// if (code === 13) { 
+		// 	console.log(code);
+		// 	this.handleClick(id);
+		// } 
+	}
 
 	render() {
 		return (
@@ -124,7 +125,7 @@ class App extends Component {
 					{this.state.isLoading ? <Loader /> : null}
 				</header>
 				<main>
-					<Gallery userResults={this.state.userResults} handleClick={this.handleClick} round={this.round} enter={this.enter}/>
+					<Gallery userResults={this.state.userResults} handleClick={this.handleClick} round={this.round} handleKeyPress={this.handleKeyPress}/>
 					<section id="details">
 						{this.state.chosenProductObject ? (
 							<Details round={this.round} chosenProductObject={this.state.chosenProductObject} />
