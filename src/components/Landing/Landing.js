@@ -3,7 +3,7 @@ import './Landing.css';
 
 const Landing = (props) => {
     return (
-        <div>
+        <div className="wrapper">
             <h1>Ethical Makeup</h1>
             <p className="landing"> I am looking for vegan
                 <select onChange= {(event) =>{
