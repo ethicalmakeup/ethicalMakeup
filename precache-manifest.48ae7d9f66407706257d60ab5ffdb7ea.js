@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "d7bc3fc18b9772a7932e",
+    "revision": "c94e0923c9d2eaebbeee",
     "url": "/ethicalMakeup/static/css/main.cc529dd1.chunk.css"
   },
   {
-    "revision": "d7bc3fc18b9772a7932e",
-    "url": "/ethicalMakeup/static/js/main.d7bc3fc1.chunk.js"
+    "revision": "c94e0923c9d2eaebbeee",
+    "url": "/ethicalMakeup/static/js/main.c94e0923.chunk.js"
   },
   {
     "revision": "302bceb4f6c80d64e066",
@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/ethicalMakeup/static/media/arrow.3ec50539.svg"
   },
   {
-    "revision": "238bea4f9fcc9557a82d3debda545369",
+    "revision": "465b4834f08bd7f39680bb7cc9a56918",
     "url": "/ethicalMakeup/index.html"
   }
 ];
