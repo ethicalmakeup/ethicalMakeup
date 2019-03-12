@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/ethicalMakeup/precache-manifest.58855b97ee16626ef3edfd33597a8fce.js"
+  "/ethicalMakeup/precache-manifest.45d53b41eebf995813d44101b818c1a5.js"
 );
 
 workbox.clientsClaim();
