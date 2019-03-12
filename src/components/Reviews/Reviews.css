@@ -1,11 +1,5 @@
 .reviews .wrapper {
-    animation: fade-in ease 1s forwards;
-    animation-delay: 3s;
     text-align: left;
-}
-
-.form {
-    animation: none;
 }
 
 .reviews h2 {
@@ -20,7 +14,7 @@
 }
 
 .reviews .form {
-    background-color: #e2ede7;
+    background: url('http://api.thumbr.it/whitenoise-361x370.png?background=c7ded2ff&noise=cc9674&density=3&opacity=100');   
 }
 
 .review {
