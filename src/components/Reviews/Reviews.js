@@ -11,12 +11,14 @@ class Reviews extends Component {
         };
     }
 
+    // function to open review form
     handleOpenForm = () => {
         this.setState({
             openForm: true
         })
     }
 
+    // function to submit user product review and save in Firebase
     handleSubmit = (e) => {
         e.preventDefault();
 
@@ -40,6 +42,7 @@ class Reviews extends Component {
         e.target.reset(); 
     }
 
+    // function to take user input in order to populate the review object above, which then gets pushed to Firebase
     handleFormChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
@@ -71,8 +74,7 @@ class Reviews extends Component {
                         > Add a review</button>
                 </div>
                 <section className="form">
-                { this.state.openForm === true ? (<Form handleSubmit={this.handleSubmit}
-                                                        handleFormChange={this.handleFormChange}/>) : (null)}
+                {this.state.openForm === true ? (<Form handleSubmit={this.handleSubmit} handleFormChange={this.handleFormChange}/>) : (null)}
                 </section>
             </div>
         )

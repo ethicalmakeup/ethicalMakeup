@@ -1,9 +1,7 @@
 import React from 'react';
 import './Details.css';
-import Clearfix from 'react-clearfix';
 import image1 from '../Gallery/image1.jpg';
 import image2 from '../Gallery/image2.jpg';
-// import Reviews from '../Review/Review.js';
 
 const Details = (props) => {
 	return (
@@ -15,9 +13,8 @@ const Details = (props) => {
                         ( <img src={image2} alt={props.chosenProductObject.name} /> ) 
                         :( <img src={props.chosenProductObject.image_link} alt={props.chosenProductObject.name}/>)}
             </div>
-            <Clearfix />
-            <div className='description'>
-                <div>
+            <div className='description clearfix'>
+                <div key={''}>
                     <h2>{props.chosenProductObject.name}</h2>
                     {props.chosenProductObject.price > 0 ? (<p>${props.round(props.chosenProductObject.price)}</p>) : (<p className="none">Price is unavailable</p>)}
                     
@@ -34,11 +31,9 @@ const Details = (props) => {
                     </div>
                     <a href={props.chosenProductObject.product_link} target="_blank" rel="noopener noreferrer" className="button">Buy Now</a>
                 </div>
-            <Clearfix />
             </div>
         </div>
     )
 }
   
-
 export default Details;

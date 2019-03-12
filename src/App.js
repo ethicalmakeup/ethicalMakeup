@@ -24,19 +24,20 @@ class App extends Component {
 
 	scrollToBottom = () => {
 		scroll.scrollToBottom(
-    {
-      duration: 2000
-    }
-  )};
+		{
+		duration: 2000
+		}
+ 	)};
   
-  scrollTo = () => {
-    scroll.scrollTo(705,
-    {
-      delay: 800,
-      duration: 1500
-    }  
+  	scrollTo = () => {
+		scroll.scrollTo(705,
+		{
+		delay: 800,
+		duration: 1500
+		}  
     )};
-
+	
+	// function that makes an API call based on which product the user chooses from the dropdown
 	handleChange = (event) => {
 		event.preventDefault();
 		this.setState(
@@ -55,30 +56,29 @@ class App extends Component {
 						product_tags: 'vegan',
 						product_type: this.state.userProduct
 					}
-				})
-					.then((response) => {
-						response = response.data;
-						if (response.length === 0) {
-							swal({
-								text: 'Sorry, no products were found in this category',
-								icon: 'error'
-							});
-						}
-						this.setState({
-							userResults: response,
-							isLoading: false
-						});
-					})
-					.catch(function(error) {
+				}).then((response) => {
+					response = response.data;
+					if (response.length === 0) {
 						swal({
-							text: 'Server Error. Please try again later.',
+							text: 'Sorry, no products were found in this category',
 							icon: 'error'
 						});
+					}
+					this.setState({
+						userResults: response,
+						isLoading: false
 					});
+				}).catch(function(error) {
+					swal({
+						text: 'Server Error. Please try again later.',
+						icon: 'error'
+					});
+				});
 			}
 		);
 	};
 
+	// function to show details and reviews of selected product 
 	handleClick = (chosenId) => {
 		const chosenProductObject = this.state.userResults.find(function(element) {
 			return element.id === chosenId;
@@ -107,22 +107,12 @@ class App extends Component {
 				});
 			}
 		);
+  	};
 
-		// console.log(this.state.chosenProductObject)
-  };
-  
+	// round prices to 2 decimal places
   	round = (price) => {
     	return Number.parseFloat(price).toFixed(2);
 	};
-
-	handleKeyPress = (event, id) => {
-		console.log(event)
-		console.log(id)
-		// if (code === 13) { 
-		// 	console.log(code);
-		// 	this.handleClick(id);
-		// } 
-	}
 
 	render() {
 		return (
@@ -132,7 +122,7 @@ class App extends Component {
 					{this.state.isLoading ? <Loader /> : null}
 				</header>
 				<main>
-					<Gallery userResults={this.state.userResults} handleClick={this.handleClick} round={this.round} handleKeyPress={this.handleKeyPress}/>
+					<Gallery userResults={this.state.userResults} handleClick={this.handleClick} round={this.round}/>
 					<section id="details">
 						{this.state.chosenProductObject ? (
 							<Details round={this.round} chosenProductObject={this.state.chosenProductObject} />

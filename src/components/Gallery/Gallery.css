@@ -22,7 +22,6 @@ li {
 
 li:hover,
 li:focus {
-	/* transform: scale(1.1s); */
 	box-shadow: 0px 0px 6px 6px rgba(205, 152, 117, 0.75);
 }
 
@@ -52,13 +51,13 @@ li:focus {
     font-size: .8rem;
 }
 
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 718px) {
 	li {
 		width: calc(100% / 2 - 20px);
 	}
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 480px) {
     li {
         width: 90%;
     }

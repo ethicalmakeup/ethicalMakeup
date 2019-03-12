@@ -1,20 +1,14 @@
 import React from 'react';
 import './Gallery.css';
-import Clearfix from 'react-clearfix';
 import image1 from './image1.jpg';
 import image2 from './image2.jpg';
 import { Link } from 'react-scroll';
-
-// const round = (price) => {
-// 	return Number.parseFloat(price).toFixed(2);
-// };
-// console.log(round(100.3))
 
 const Gallery = (props) => {
 
 	return (
 		<section className="gallery wrapper" id="gallery">
-			<ul>
+			<ul className="clearfix">
 				{props.userResults.map((result) => {
 					return (
 						<li key={result.id} tabIndex="0" onKeyPress={(e) => props.handleKeyPress(e, result.id)}>
@@ -53,7 +47,6 @@ const Gallery = (props) => {
 						</li>
 					);
 				})}
-				<Clearfix />
 			</ul>
 		</section>
 	);
