@@ -22,7 +22,7 @@ const Details = (props) => {
                     {props.chosenProductObject.price > 0 ? (<p>${props.round(props.chosenProductObject.price)}</p>) : (<p className="none">Price is unavailable</p>)}
                     
                     <p className="descriptionText">{props.chosenProductObject.description}</p>
-                    {props.chosenProductObject.rating ? (<p>Rating: {props.chosenProductObject.rating}/5</p>):(<p className="noRating">Rating: <span>Unavailable</span></p>)}
+                    {props.chosenProductObject.rating ? (<p><strong>Rating:</strong> {props.chosenProductObject.rating}/5</p>):(<p className="noRating">Rating: <span>Unavailable</span></p>)}
                     <div className="clearfix">
                         {props.chosenProductObject.product_colors.map(color => {
                             return (

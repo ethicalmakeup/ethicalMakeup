@@ -8,6 +8,7 @@ import Reviews from './components/Reviews/Reviews.js';
 import Loader from './components/Loader/Loader.js';
 import firebase from './firebase.js';
 import { animateScroll as scroll } from 'react-scroll';
+import swal from 'sweetalert';
 
 class App extends Component {
 	constructor() {
@@ -47,7 +48,7 @@ class App extends Component {
 			() => {
 				axios({
 					method: 'GET',
-					url: 'http://makeup-api.herokuapp.com/api/v1/products.json',
+					url: 'https://makeup-api.herokuapp.com/api/v1/products.json',
 					responseType: 'json',
 					params: {
 						format: 'json',
@@ -58,7 +59,10 @@ class App extends Component {
 					.then((response) => {
 						response = response.data;
 						if (response.length === 0) {
-							alert('Sorry, no products were found in this category');
+							swal({
+								text: 'Sorry, no products were found in this category',
+								icon: 'success'
+							});
 						}
 						this.setState({
 							userResults: response,
