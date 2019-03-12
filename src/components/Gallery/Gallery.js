@@ -3,7 +3,7 @@ import './Gallery.css';
 import Clearfix from 'react-clearfix';
 import image1 from './image1.jpg';
 import image2 from './image2.jpg';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 
 // const round = (price) => {
 // 	return Number.parseFloat(price).toFixed(2);
@@ -17,7 +17,7 @@ const Gallery = (props) => {
 			<ul>
 				{props.userResults.map((result) => {
 					return (
-						<li key={result.id} tabindex="0">
+						<li key={result.id} tabIndex="0" onKeyPress={(e) => props.handleKeyPress(e, result.id)}>
 							<Link
 								to="details"
 								spy={true}
@@ -49,8 +49,6 @@ const Gallery = (props) => {
 										<p className="none">Price is unavailable</p>
 									)}
 								</div>
-								{/* {result.price.split('.')[1].length ? (<p>${result.price.toFixed(2)}</p>) : (null)} */}
-								{/* trying to make all the prices with only 1 decimal place display 2 decimal places */}
 							</Link>
 						</li>
 					);

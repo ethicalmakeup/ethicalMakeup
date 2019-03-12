@@ -21,13 +21,28 @@ select:focus {
     background: #CADFD4;
 }
 
-@media only screen and (max-width:620px) {
+.landing {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 15px;
+}
+
+@media only screen and (max-width:900px) {
+
+    h1 {
+        font-size: 4rem;
+        padding-top: 40px;
+    }
+
+}
+
+@media only screen and (max-width:700px) {
 
     h1 {
         font-size: 3rem;
-        padding-top: 75px;
+        margin-bottom: 20px;
     }
-
 }
 
 @media only screen and (max-width:408px) {
