@@ -61,7 +61,7 @@ class App extends Component {
 						if (response.length === 0) {
 							swal({
 								text: 'Sorry, no products were found in this category',
-								icon: 'success'
+								icon: 'error'
 							});
 						}
 						this.setState({
@@ -70,7 +70,10 @@ class App extends Component {
 						});
 					})
 					.catch(function(error) {
-						alert('Server error. Try again later');
+						swal({
+							text: 'Server Error. Please try again later.',
+							icon: 'error'
+						});
 					});
 			}
 		);
