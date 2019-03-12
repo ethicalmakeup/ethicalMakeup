@@ -5,17 +5,19 @@ import image1 from './image1.jpg';
 import image2 from './image2.jpg';
 import { Link, animateScroll as scroll } from 'react-scroll';
 
-const round = (price) => {
-	return Number.parseFloat(price).toFixed(2);
-};
+// const round = (price) => {
+// 	return Number.parseFloat(price).toFixed(2);
+// };
+// console.log(round(100.3))
 
 const Gallery = (props) => {
+
 	return (
 		<section className="gallery wrapper" id="gallery">
 			<ul>
 				{props.userResults.map((result) => {
 					return (
-						<li key={result.id}>
+						<li key={result.id} tabindex="0">
 							<Link
 								to="details"
 								spy={true}
@@ -42,7 +44,7 @@ const Gallery = (props) => {
 								<div>
 									<h2 className="title">{result.name}</h2>
 									{result.price > 0 ? (
-										<p className="price">${result.price}</p>
+										<p className="price">${props.round(result.price)}</p>
 									) : (
 										<p className="none">Price is unavailable</p>
 									)}

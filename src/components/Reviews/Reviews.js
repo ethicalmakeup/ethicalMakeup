@@ -49,21 +49,27 @@ class Reviews extends Component {
     render() {
         return (
             <div className="reviews">
-                <h2>REVIEWS</h2>
-                {this.props.reviews.map(review => {
-                    return (
-                        <div className="review">
-                            <h3>{review.name}</h3>
-                            <p className="date">{review.date} </p>
-                            <p>{review.buyAgain} </p>
-                            <p>Review: {review.reviewText}</p>
-                        </div>
-                    )
-                })}
-                <button className="button" onClick={() => {
-                    this.handleOpenForm();
-                    this.props.scroll() }} 
-                > Add a review</button>
+                <div className="wrapper">
+                    <h2>reviews</h2>
+                    {this.props.reviews.length === 0 ? 
+                        (<div className="review"><p>Be the first to review this product!</p></div>) :
+                    (
+                    this.props.reviews.map(review => {
+                        
+                        return (
+                            <div className="review clearfix">
+                                <h3>{review.name}</h3>
+                                <p className="date">{review.date} </p>
+                                <p className="choice">{review.buyAgain} </p>
+                                <p><strong>Review</strong>: {review.reviewText}</p>
+                            </div>
+                        )}
+                    ))}
+                    <button className="button" onClick={() => {
+                        this.handleOpenForm();
+                        this.props.scroll() }} 
+                        > Add a review</button>
+                </div>
                 <section className="form">
                 { this.state.openForm === true ? (<Form handleSubmit={this.handleSubmit}
                                                         handleFormChange={this.handleFormChange}/>) : (null)}

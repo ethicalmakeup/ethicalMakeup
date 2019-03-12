@@ -19,10 +19,10 @@ const Details = (props) => {
             <div className='description'>
                 <div>
                     <h2>{props.chosenProductObject.name}</h2>
-                    {props.chosenProductObject.price > 0 ? (<p>${props.chosenProductObject.price}</p>) : (<p className="none">Price is unavailable</p>)}
+                    {props.chosenProductObject.price > 0 ? (<p>${props.round(props.chosenProductObject.price)}</p>) : (<p className="none">Price is unavailable</p>)}
                     
                     <p className="descriptionText">{props.chosenProductObject.description}</p>
-                    {props.chosenProductObject.rating ? (<p>Rating: {props.chosenProductObject.rating}/5</p>):(<p>Rating: Not available</p>)}
+                    {props.chosenProductObject.rating ? (<p>Rating: {props.chosenProductObject.rating}/5</p>):(<p className="noRating">Rating: <span>Unavailable</span></p>)}
                     <div className="clearfix">
                         {props.chosenProductObject.product_colors.map(color => {
                             return (
@@ -34,8 +34,6 @@ const Details = (props) => {
                     </div>
                     <a href={props.chosenProductObject.product_link} target="_blank" rel="noopener noreferrer" className="button">Buy Now</a>
                 </div>
-
-                
             <Clearfix />
             </div>
         </div>

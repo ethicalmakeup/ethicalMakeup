@@ -6,7 +6,7 @@ const Form = (props) => {
     return (
         <form className="formReview wrapper"  action="submit" onSubmit={props.handleSubmit}>
             <div className="formName">
-                <label for="reviewName">Name:</label>
+                <label for="reviewName" className="visuallyHidden">Name:</label>
                 <input required type="text" id="reviewName" name="reviewName" placeholder="Your name" onChange={props.handleFormChange}></input>
             </div>
             <div className="buyAgain">
@@ -15,15 +15,15 @@ const Form = (props) => {
                 <div className="buyAgainAnswer">
                     <input required type="radio" id="yes" name="buyAgain" value="Would buy again" onChange={props.handleFormChange}></input>
                     <label for="yes">Yes</label>
-                </div>
-                <div className="buyAgainAnswer">
+                {/* </div> */}
+                {/* <div className="buyAgainAnswer"> */}
                     <input required type="radio" id="no" name="buyAgain" value="Would not buy again" onChange={props.handleFormChange}></input>
                     <label for="no">No</label>
                 </div>
             </div>
             <div className="formCommentField">
-                <label for="reviewText">Review:</label>
-                <textarea required id="reviewText" placeholder="Your review..." cols="20" rows="5" name="reviewText" 
+                <label for="reviewText" className="visuallyHidden">Review:</label>
+                <textarea required id="reviewText" placeholder="How was your experience with this product?" cols="20" rows="5" name="reviewText" 
                         onChange={props.handleFormChange}></textarea>
             </div>
             <div className="formButton">

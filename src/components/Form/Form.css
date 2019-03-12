@@ -8,39 +8,39 @@
     font-size: 1rem;
     overflow: hidden;
     width: 100%;
-    animation: fade-in ease 1s forwards;
 }
 
 .formName,
 .buyAgain {
     float: left;
-    width: calc(50% - 2%);
-    margin-bottom: 2%;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .formName {
-    text-align: right;
+    text-align: center;
 }
 
 .formName input {
     border: 0;
-    padding: 2% 1%;
+    padding: 2%;
     box-shadow: -2px 2px #CD9875;
 }
-
 .buyAgain {
-    text-align: left;
-    margin-left: 2%;
+    text-align: center;
+    width: 100%;
 }
 
 .buyAgain p {
     margin: 0;
-    margin-bottom: 2%;
+    margin-bottom: 10px;
 }
 
 .buyAgainAnswer {
-    float: left;
-    width: calc(50% - 24%);
+    /* float: left; */
+    width: 60%;
+    text-align: center;
+    margin: 10px auto;
 }
 
 .buyAgainAnswer input[type="radio"] {
@@ -49,18 +49,14 @@
   }
 
 .buyAgainAnswer label {
-    margin-left: 12%;
+    margin-right: 9%;
+    margin-left: 3%;
 }
 
 .formCommentField,
 .formButton {
     float: left;
-    width: 90%;
-}
-
-.formName label,
-.formCommentField label {
-    margin-right: 2%;
+    width: 100%;
 }
 
 .formCommentField {
@@ -70,7 +66,7 @@
 .formCommentField textarea {
     width: 50%;
     border: 0;
-    padding: 2% 1%;
+    padding: 2%;
     box-shadow: -2px 2px #CD9875;
     resize: none;
 }
@@ -82,39 +78,20 @@
 
 /* MEDIA QUERY 630px */
 
-@media (max-width: 630px) {
-
-    .formName {
-        width: 80%;
-        text-align: left;
-        margin-left: 2%;
-    }
-
-    .buyAgain {
-        width: 65%;
-        text-align: center;
-    }
-
-    .formCommentField {
-        text-align: left;
-    }
+ @media (max-width: 630px) {
 
     .formCommentField textarea {
         width: 80%;
     }
 
-    .buyAgainAnswer {
-        width: 20%;
-        margin-left: 20%;
+    .formReview {
+        font-size: 0.9rem;
     }
 
-    .formButton {
-        width: 87%;
-    }
-}
-
-/* MEDIA QUERY 427PX */
-
+} 
+/* 
+ MEDIA QUERY 427PX */
+/* 
 @media (max-width: 427px) {
     .formName,
     .buyAgain {
@@ -146,6 +123,7 @@
         width: 85%;
         margin-top: 4%;
     }
-}
+} */
+
 
 

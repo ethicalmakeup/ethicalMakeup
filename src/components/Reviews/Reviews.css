@@ -1,11 +1,22 @@
-.reviews {
+.reviews .wrapper {
     animation: fade-in ease 1s forwards;
     animation-delay: 3s;
+    text-align: left;
+}
+
+.form {
+    animation: none;
+}
+
+.reviews h2 {
+    text-align: left;
+    text-transform: uppercase;
 }
 
 .reviews .button {
     margin: 25px 0;
     padding: 10px 30px;
+
 }
 
 .reviews .form {
@@ -16,10 +27,7 @@
     overflow: hidden;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    width: 80%;
-    margin: 0 auto;
     padding: 20px 0;
-    /* NEED TO CLEARFIX */
 }
 
 .review h3, p {
@@ -39,4 +47,10 @@
     float: right;
     color: grey;
     clear: none;
+}
+
+.choice {
+    font-style: italic;
+    margin: 10px 0;
+    font-size: 0.8rem;
 }
