@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 .form {
     box-shadow: 0 0 10px #999;
 }
@@ -29,6 +32,7 @@
     padding: 2%;
     box-shadow: -2px 2px #CD9875;
 }
+
 .buyAgain {
     text-align: center;
     width: 100%;
@@ -40,7 +44,6 @@
 }
 
 .buyAgainAnswer {
-    /* float: left; */
     width: 60%;
     text-align: center;
     margin: 10px auto;

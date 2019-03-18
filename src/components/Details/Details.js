@@ -1,9 +1,7 @@
 import React from 'react';
 import './Details.css';
-import Clearfix from 'react-clearfix';
 import image1 from '../Gallery/image1.jpg';
 import image2 from '../Gallery/image2.jpg';
-// import Reviews from '../Review/Review.js';
 
 const Details = (props) => {
 	return (
@@ -15,14 +13,19 @@ const Details = (props) => {
                         ( <img src={image2} alt={props.chosenProductObject.name} /> ) 
                         :( <img src={props.chosenProductObject.image_link} alt={props.chosenProductObject.name}/>)}
             </div>
+<<<<<<< HEAD
             <Clearfix />
             <div className='description'>
                 {/* <div> */}
+=======
+            <div className='description clearfix'>
+                <div key={''}>
+>>>>>>> master
                     <h2>{props.chosenProductObject.name}</h2>
                     {props.chosenProductObject.price > 0 ? (<p>${props.round(props.chosenProductObject.price)}</p>) : (<p className="none">Price is unavailable</p>)}
                     
                     <p className="descriptionText">{props.chosenProductObject.description}</p>
-                    {props.chosenProductObject.rating ? (<p>Rating: {props.chosenProductObject.rating}/5</p>):(<p className="noRating">Rating: <span>Unavailable</span></p>)}
+                    {props.chosenProductObject.rating ? (<p><strong>Rating:</strong> {props.chosenProductObject.rating}/5</p>):(<p className="noRating">Rating: <span>Unavailable</span></p>)}
                     <div className="clearfix">
                         {props.chosenProductObject.product_colors.map(color => {
                             return (
@@ -33,12 +36,15 @@ const Details = (props) => {
                         })}
                     </div>
                     <a href={props.chosenProductObject.product_link} target="_blank" rel="noopener noreferrer" className="button">Buy Now</a>
+<<<<<<< HEAD
                 {/* </div> */}
             <Clearfix />
+=======
+                </div>
+>>>>>>> master
             </div>
         </div>
     )
 }
   
-
 export default Details;

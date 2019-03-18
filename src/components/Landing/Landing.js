@@ -3,15 +3,15 @@ import './Landing.css';
 
 const Landing = (props) => {
     return (
-        <div>
+        <div className="wrapper">
             <h1>Ethical Makeup</h1>
             <p className="landing"> I am looking for vegan
-                <select defaultValue="no-value" onChange= {(event) =>{
+                <select defaultValue="no-value" onChange={(event) => {
                     props.handleChange(event);
                     props.scrollTo(event)
                     }}
                     >
-                    <option value="no-value" disabled>Select product</option>
+                    <option disabled value="no-value">Select product</option>
                     <option value="blush">Blush</option>
                     <option value="bronzer">Bronzer</option>
                     <option value="eyebrow">Eyebrow</option>
