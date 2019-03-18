@@ -17,7 +17,7 @@ const Details = (props) => {
             </div>
             <Clearfix />
             <div className='description'>
-                <div>
+                {/* <div> */}
                     <h2>{props.chosenProductObject.name}</h2>
                     {props.chosenProductObject.price > 0 ? (<p>${props.round(props.chosenProductObject.price)}</p>) : (<p className="none">Price is unavailable</p>)}
                     
@@ -33,7 +33,7 @@ const Details = (props) => {
                         })}
                     </div>
                     <a href={props.chosenProductObject.product_link} target="_blank" rel="noopener noreferrer" className="button">Buy Now</a>
-                </div>
+                {/* </div> */}
             <Clearfix />
             </div>
         </div>

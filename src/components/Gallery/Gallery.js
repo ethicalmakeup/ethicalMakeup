@@ -26,7 +26,6 @@ const Gallery = (props) => {
 								duration={1300}
 								onClick={(event) => {
 									props.handleClick(result.id)
-									props.enter(event)
 									}}
 							>
 								{result.id === 1043 ? (

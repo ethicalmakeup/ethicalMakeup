@@ -6,12 +6,12 @@ const Landing = (props) => {
         <div>
             <h1>Ethical Makeup</h1>
             <p className="landing"> I am looking for vegan
-                <select onChange= {(event) =>{
+                <select defaultValue="no-value" onChange= {(event) =>{
                     props.handleChange(event);
                     props.scrollTo(event)
                     }}
                     >
-                    <option disabled selected value>Select product</option>
+                    <option value="no-value" disabled>Select product</option>
                     <option value="blush">Blush</option>
                     <option value="bronzer">Bronzer</option>
                     <option value="eyebrow">Eyebrow</option>
